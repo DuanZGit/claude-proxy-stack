@@ -1,0 +1,15 @@
+[Unit]
+Description=Headroom Proxy Server
+After=network.target
+
+[Service]
+Type=simple
+User=%i
+WorkingDirectory=%h/claude-proxy-stack
+ExecStart=%h/claude-proxy-stack/scripts/start-headroom.sh
+Restart=on-failure
+RestartSec=5
+EnvironmentFile=%h/claude-proxy-stack/config/headroom.env
+
+[Install]
+WantedBy=default.target

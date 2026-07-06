@@ -1,0 +1,17 @@
+[Unit]
+Description=CC-Switch Proxy Daemon
+After=network.target headroom.service
+
+[Service]
+Type=simple
+User=%i
+WorkingDirectory=%h/claude-proxy-stack
+ExecStartPre=/bin/bash -c '%h/.local/bin/cc-switch daemon stop 2>/dev/null || true'
+ExecStart=%h/.local/bin/cc-switch daemon start
+ExecStartPost=/bin/sleep 2
+ExecStartPost=/bin/bash -c '%h/.local/bin/cc-switch proxy enable --app claude'
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

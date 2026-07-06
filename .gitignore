@@ -1,0 +1,22 @@
+# Secrets
+.env
+*.key
+*.secret
+
+# Data
+*.db
+*.db-wal
+*.db-shm
+*.lock
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# cc-switch runtime
+.cc-switch/

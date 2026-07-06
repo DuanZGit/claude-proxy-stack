@@ -1,0 +1,12 @@
+{
+  "_comment": "cc-switch provider configuration export",
+  "provider": {
+    "id": "agnes",
+    "name": "agnes",
+    "base_url": "http://127.0.0.1:8787",
+    "api_key": "PLACEHOLDER",
+    "model": "agnes-2.0-flash",
+    "api_format": "openai_chat",
+    "api_key_field": "auth-token"
+  }
+}
